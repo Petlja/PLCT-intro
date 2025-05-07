@@ -57,9 +57,9 @@ Suggestion notes
 
 
 ````markdown
+```{infonote} 
 Info notes
 ```
-
 ````
 
 ```{infonote} 
@@ -70,6 +70,11 @@ Info notes
 ## Druge vrste notes-a
 
 Možete koristiti i druge vrste note komponenti – Sphinx je generalno bogat ovakvim komponentama.
+````markdown
+```{card}
+Ovo je primer kartice
+```
+````
 
 ```{card}
 Ovo je primer kartice
