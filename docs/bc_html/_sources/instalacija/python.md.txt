@@ -21,13 +21,13 @@ Svaki put kada želite da koristite virtuelno okruženje, potrebno je da ga akti
 
 **Za Windows:**
 
-```bash
+```cmd
 .venv\Scripts\activate
 ```
 
 **Za Linux/MacOS:**
 
-```bash
+```shell
 source .venv/bin/activate
 ```
 
