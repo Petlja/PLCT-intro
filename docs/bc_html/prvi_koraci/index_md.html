@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kurs &#8212; PLCT Intro</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=213c783b" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=8a06a31e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=5d41b2a5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6b89569b"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/translations.js?v=3c3b4542"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="next" title="Prikaz kursa u lokalnom okruženju" href="preview.html" />
+    <link rel="prev" title="Prvi koraci" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="kurs">
+<h1>Kurs<a class="headerlink" href="#kurs" title="Permalink to this heading">¶</a></h1>
+<p>Sphinx podržava različite tipove strukture fajlova koji, kroz definisanu hijerarhiju, na kraju čine jedan dokument. Mi takav dokument nazivamo kursom.
+Kada govorimo o Petljinim kursevima, moramo imati na umu da nije svaki Sphinx projekat kurs, ali svaki kurs jeste Sphinx projekat.</p>
+<p>Kursevi svoj sadržaj dele na <strong>lekcije</strong> i <strong>aktivnosti</strong>.</p>
+<p>Lekcije predstavljaju celine koje se bave jednom temom i sadrže više aktivnosti.</p>
+<section id="struktura-kursa">
+<h2>Struktura kursa<a class="headerlink" href="#struktura-kursa" title="Permalink to this heading">¶</a></h2>
+<p>Fokusirajmo se na strukturu <code class="docutils literal notranslate"><span class="pre">source</span></code> foldera.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kurs/
+├── source/
+│   ├── index.md
+│   ├── conf.py
+│   ├── uvod/
+│   │   └── aktivnost.md
+│   ├── lekcija/
+│   │   ├──  intro_u_temu.md
+│   │   └──  kviz.md/
+│   ├── prvi_koraci/    
+│   │    └── plct.md 
+│   └── zanimljiva_tema/
+│       ├── aktivnost.md
+│       ├── aktivnost2.md
+└──     └── kviz.md
+  
+</pre></div>
+</div>
+</section>
+<section id="glavni-index-md-fajl">
+<h2>Glavni index.md fajl<a class="headerlink" href="#glavni-index-md-fajl" title="Permalink to this heading">¶</a></h2>
+<p>Glavni <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl je ulazna tačka u kurs. U njemu se nalaze osnovne informacije o kursu, kao i toctree koji definiše strukturu kursa.</p>
+<section id="table-of-contents">
+<h3>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">¶</a></h3>
+<p>Sphinx svoju strukturu gradi na osnovu <code class="docutils literal notranslate"><span class="pre">toctree</span></code> direktive. Index fajlovi služe kao veza između različitih lekcija i aktivnosti. Evo Evo kako može da izgleda jedan <strong>toctree</strong> u glavnom <strong>index.md</strong> fajlu:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{toctree}
+:maxdepth: 2
+:hidden:
+
+uvod/index
+lekcija/index
+prvi_koraci/index
+zanimljiva_tema/index
+```
+</pre></div>
+</div>
+<p>Ovaj <code class="docutils literal notranslate"><span class="pre">toctree</span></code> komunicira da se, relativno u odnosu na njega, nalaze folderi <code class="docutils literal notranslate"><span class="pre">uvod</span></code>, <code class="docutils literal notranslate"><span class="pre">lekcija</span></code>, <code class="docutils literal notranslate"><span class="pre">prvi_koraci</span></code> i <code class="docutils literal notranslate"><span class="pre">zanimljiva_tema</span></code> koji sadrže index.md fajlove.</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>Folder su zapravo konkretizacija lekcije a fajlovi konkretizacija aktivnosti.</p>
+
+    </div></div>
+<p>Ako odemo korak talje i posmatramo jedan <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajlu lekciji onda u njemu imamo <code class="docutils literal notranslate"><span class="pre">toctree</span></code> koji će opisati koje sve aktivnosti se nalaze u toj lekciji. Na primer file
+<code class="docutils literal notranslate"><span class="pre">zanimljiva_tema/index.md</span></code> može izgledati ovako:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{toctree}
+:maxdepth: 2
+:hidden:
+
+aktivost
+aktivnost2
+kviz
+```
+</pre></div>
+</div>
+<p>On komunicira da se u folderu <code class="docutils literal notranslate"><span class="pre">zanimljiva_tema</span></code> nalaze 3 fajla: <code class="docutils literal notranslate"><span class="pre">aktivnost.md</span></code>, <code class="docutils literal notranslate"><span class="pre">aktivnost2.md</span></code>, <code class="docutils literal notranslate"><span class="pre">kviz.md</span></code>. Sphinx će automatski generisati navigaciju između ovih fajlova.</p>
+
+    <div class="note-wrapper technicalnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
+        <div class="course-content">
+            
+<p>Ako ste ranije radili sa Sphinx-om, znate da fajlovi obično imaju <code class="docutils literal notranslate"><span class="pre">.rst</span></code> ekstenziju, jer Sphinx koristi reStructuredText format.<br />
+U našem iskustvu, Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) je poznatiji autorima, pa je rad sa njim jednostavniji. Zato koristimo Sphinx ekstenziju <code class="docutils literal notranslate"><span class="pre">myst_parser</span></code>, koja omogućava korišćenje Markdown fajlova u kursu.</p>
+
+    </div></div>
+</section>
+<section id="iskljucivanje-aktivnosti-iz-kursa">
+<h3>Iskljucivanje aktivnosti iz kursa<a class="headerlink" href="#iskljucivanje-aktivnosti-iz-kursa" title="Permalink to this heading">¶</a></h3>
+<p>Za Sphinx index fajlovi mogu imati sadržaj kao i bilo koji drugi markdown fajl. Ovo nije slučaj na petlji. Kako bismo olakšali navigaciju kroz kurs i uskladili je sa Petljinim navigacionim sistemom, index.md fajlove možete isključiti dodavanjem sledećeg koda na samom vrhu:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>---
+<span class="gu">status: exclude</span>
+<span class="gu">---</span>
+</pre></div>
+</div>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>Ovu opciju možete koristiti u bilo kojoj aktivnosti, posebno za sadržaj koji još nije završen ili je u fazi testiranja. HTML fajlovi će biti generisani, ali se u pregledima (preview) neće prikazivati.</p>
+
+    </div></div>
+</section>
+<section id="meta-podaci">
+<h3>Meta podaci<a class="headerlink" href="#meta-podaci" title="Permalink to this heading">¶</a></h3>
+<p>Po konvencija u glavni <code class="docutils literal notranslate"><span class="pre">index.md</span></code> upisujete meta podatke o kursu. Od ovih podataka ne zavise vas lokalni kurs ali su nama potrebni kako bi smo objavili kurs na petlji. Neke od ovih podataka kao sto je alias bice vec upisani u <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl. Ostale podatke kao sto su opisi, šta ćete naučiti i šta vam je potrebno da bi ste pratili kurs prepustamo vama.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>---
+alias: alias_kursa
+short_descripiton: Kratak opis koji će se prikazivati naslovnoj strani kursa. (1)
+long_description: &gt; (2)
+    &lt;p&gt; Opis kursa koji će se prikazivati na naslovnoj strani kursa. &lt;/p&gt;
+    &lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by/4.0/deed.sr_LATN&quot;&gt;
+    &lt;img alt=&quot;Creative Commons License&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by/4.0/88x31.png&quot;&gt;&lt;/a&gt;
+    &lt;br&gt;Овај курс Фондација Петља објавила je под лиценцом &lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by/4.0/deed.sr_LATN&quot;&gt;Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)&lt;/a&gt;.
+    &lt;/p&gt;
+will_learn: (3)
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Lista stvari koje ćete naučiti tokom kursa.
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Jako zanimljivih stvari
+
+needed: 
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Racunar 
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Specificni softver
+useful:
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Python 3.12 documentation: https://docs.python.org/3.12/
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Google: https://google.com/
+
+---
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

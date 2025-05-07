@@ -1,0 +1,36 @@
+img.with-border {
+    border: 1px solid #CCC
+}
+
+
+div.highlight-none pre
+{
+    white-space: pre-wrap;
+}
+
+figure.align-default {
+    padding: 0;
+}
+
+figure.align-center {
+    text-align: center;
+    padding: 0;
+}
+
+div.sphinxsidebarwrapper h3 {
+    display: none;
+}
+
+div.sphinxsidebarwrapper h1.logo {
+    font-size: 24px;
+}
+
+div.searchformwrapper {
+    display: none;
+}
+
+div.sphinxsidebar {
+    border-right-color: #444;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
