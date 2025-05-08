@@ -51,10 +51,10 @@
 <p>Sphinx podržava različite tipove strukture fajlova koji, kroz definisanu hijerarhiju, na kraju čine jedan dokument. Mi takav dokument nazivamo kursom.
 Kada govorimo o Petljinim kursevima, moramo imati na umu da nije svaki Sphinx projekat kurs, ali svaki kurs jeste Sphinx projekat.</p>
 <p>Kursevi svoj sadržaj dele na <strong>lekcije</strong> i <strong>aktivnosti</strong>.</p>
-<p>Lekcije predstavljaju celine koje se bave jednom temom i sadrže više aktivnosti.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Lekcije</span></code> predstavljaju celine koje se bave jednom temom i sadrže više <code class="docutils literal notranslate"><span class="pre">aktivnosti</span></code>.</p>
 <section id="struktura-kursa">
 <h2>Struktura kursa<a class="headerlink" href="#struktura-kursa" title="Permalink to this heading">¶</a></h2>
-<p>Fokusirajmo se na strukturu <code class="docutils literal notranslate"><span class="pre">source</span></code> foldera.</p>
+<p>Fokusirajmo se na strukturu <code class="docutils literal notranslate"><span class="pre">source</span></code> foldera na sledećem primeru.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kurs/
 ├── source/
 │   ├── index.md
@@ -75,11 +75,11 @@ Kada govorimo o Petljinim kursevima, moramo imati na umu da nije svaki Sphinx pr
 </div>
 </section>
 <section id="glavni-index-md-fajl">
-<h2>Glavni index.md fajl<a class="headerlink" href="#glavni-index-md-fajl" title="Permalink to this heading">¶</a></h2>
+<h2>Glavni <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl<a class="headerlink" href="#glavni-index-md-fajl" title="Permalink to this heading">¶</a></h2>
 <p>Glavni <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl je ulazna tačka u kurs. U njemu se nalaze osnovne informacije o kursu, kao i toctree koji definiše strukturu kursa.</p>
 <section id="table-of-contents">
 <h3>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">¶</a></h3>
-<p>Sphinx svoju strukturu gradi na osnovu <code class="docutils literal notranslate"><span class="pre">toctree</span></code> direktive. Index fajlovi služe kao veza između različitih lekcija i aktivnosti. Evo Evo kako može da izgleda jedan <strong>toctree</strong> u glavnom <strong>index.md</strong> fajlu:</p>
+<p>Sphinx svoju strukturu gradi na osnovu <code class="docutils literal notranslate"><span class="pre">toctree</span></code> direktive. Index fajlovi služe kao veza između različitih lekcija i aktivnosti. Evo kako izgleda <code class="docutils literal notranslate"><span class="pre">toctree</span></code> za strukturu opisanu iznad:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{toctree}
 :maxdepth: 2
 :hidden:
@@ -98,10 +98,11 @@ zanimljiva_tema/index
         <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
         <div class="course-content">
             
-<p>Folder su zapravo konkretizacija lekcije a fajlovi konkretizacija aktivnosti.</p>
+<p>Folderi su zapravo konkretizacija lekcije a fajlovi konkretizacija aktivnosti. Lekcije svoj naziv dobijaju iz naslova <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajla.
+Aktivnosti svoj naziv dobijaju iz top level naslova fajla koji ih definiše.</p>
 
     </div></div>
-<p>Ako odemo korak talje i posmatramo jedan <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajlu lekciji onda u njemu imamo <code class="docutils literal notranslate"><span class="pre">toctree</span></code> koji će opisati koje sve aktivnosti se nalaze u toj lekciji. Na primer file
+<p>Ako odemo korak dalje i posmatramo jedan <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl u lekciji onda u njemu imamo <code class="docutils literal notranslate"><span class="pre">toctree</span></code> koji će opisati koje sve aktivnosti se nalaze u toj lekciji. Na primer file
 <code class="docutils literal notranslate"><span class="pre">zanimljiva_tema/index.md</span></code> može izgledati ovako:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{toctree}
 :maxdepth: 2
@@ -113,24 +114,14 @@ kviz
 ```
 </pre></div>
 </div>
-<p>On komunicira da se u folderu <code class="docutils literal notranslate"><span class="pre">zanimljiva_tema</span></code> nalaze 3 fajla: <code class="docutils literal notranslate"><span class="pre">aktivnost.md</span></code>, <code class="docutils literal notranslate"><span class="pre">aktivnost2.md</span></code>, <code class="docutils literal notranslate"><span class="pre">kviz.md</span></code>. Sphinx će automatski generisati navigaciju između ovih fajlova.</p>
-
-    <div class="note-wrapper technicalnote-type">
-        <div class="note-icon-holder"> </div>
-        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
-        <div class="course-content">
-            
-<p>Ako ste ranije radili sa Sphinx-om, znate da fajlovi obično imaju <code class="docutils literal notranslate"><span class="pre">.rst</span></code> ekstenziju, jer Sphinx koristi reStructuredText format.<br />
-U našem iskustvu, Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) je poznatiji autorima, pa je rad sa njim jednostavniji. Zato koristimo Sphinx ekstenziju <code class="docutils literal notranslate"><span class="pre">myst_parser</span></code>, koja omogućava korišćenje Markdown fajlova u kursu.</p>
-
-    </div></div>
+<p>Ovaj <code class="docutils literal notranslate"><span class="pre">toctree</span></code> komunicira da se u folderu <code class="docutils literal notranslate"><span class="pre">zanimljiva_tema</span></code> nalaze 3 fajla: <code class="docutils literal notranslate"><span class="pre">aktivnost.md</span></code>, <code class="docutils literal notranslate"><span class="pre">aktivnost2.md</span></code>, <code class="docutils literal notranslate"><span class="pre">kviz.md</span></code> koji predstavljaju sadržaj lekcije.</p>
 </section>
 <section id="iskljucivanje-aktivnosti-iz-kursa">
 <h3>Iskljucivanje aktivnosti iz kursa<a class="headerlink" href="#iskljucivanje-aktivnosti-iz-kursa" title="Permalink to this heading">¶</a></h3>
-<p>Za Sphinx index fajlovi mogu imati sadržaj kao i bilo koji drugi markdown fajl. Ovo nije slučaj na petlji. Kako bismo olakšali navigaciju kroz kurs i uskladili je sa Petljinim navigacionim sistemom, index.md fajlove možete isključiti dodavanjem sledećeg koda na samom vrhu:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>---
-<span class="gu">status: exclude</span>
-<span class="gu">---</span>
+<p>Za Sphinx index fajlovi mogu imati sadržaj kao i bilo koji drugi fajl. Ovo nije slučaj na Petlja platformi. Kako bismo olakšali navigaciju kroz kurs i uskladili je sa Petljinim navigacionim sistemom, <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajlove možete isključiti dodavanjem sledećeg koda (Markdown front matter) na sam vrh fajla:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---
+status: exclude
+---
 </pre></div>
 </div>
 
@@ -145,17 +136,17 @@ U našem iskustvu, Markdown (<code class="docutils literal notranslate"><span cl
 </section>
 <section id="meta-podaci">
 <h3>Meta podaci<a class="headerlink" href="#meta-podaci" title="Permalink to this heading">¶</a></h3>
-<p>Po konvencija u glavni <code class="docutils literal notranslate"><span class="pre">index.md</span></code> upisujete meta podatke o kursu. Od ovih podataka ne zavise vas lokalni kurs ali su nama potrebni kako bi smo objavili kurs na petlji. Neke od ovih podataka kao sto je alias bice vec upisani u <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl. Ostale podatke kao sto su opisi, šta ćete naučiti i šta vam je potrebno da bi ste pratili kurs prepustamo vama.</p>
+<p>Po konvencija u glavni <code class="docutils literal notranslate"><span class="pre">index.md</span></code> upisujete meta podatke o kursu. Neki od ovih podataka kao sto je <strong>alias</strong> bice vec upisani u <code class="docutils literal notranslate"><span class="pre">index.md</span></code> fajl. Ostale podatke kao sto su „opisi”, „šta ćete naučiti” i „šta vam je potrebno” da bi ste pratili kurs prepustamo vama.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>---
 alias: alias_kursa
-short_descripiton: Kratak opis koji će se prikazivati naslovnoj strani kursa. (1)
-long_description: &gt; (2)
+short_descripiton: Kratak opis koji će se prikazivati naslovnoj strani kursa.
+long_description: &gt;
     &lt;p&gt; Opis kursa koji će se prikazivati na naslovnoj strani kursa. &lt;/p&gt;
     &lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by/4.0/deed.sr_LATN&quot;&gt;
     &lt;img alt=&quot;Creative Commons License&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by/4.0/88x31.png&quot;&gt;&lt;/a&gt;
     &lt;br&gt;Овај курс Фондација Петља објавила je под лиценцом &lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by/4.0/deed.sr_LATN&quot;&gt;Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)&lt;/a&gt;.
     &lt;/p&gt;
-will_learn: (3)
+will_learn:
 <span class="w">    </span><span class="k">-</span><span class="w"> </span>Lista stvari koje ćete naučiti tokom kursa.
 <span class="w">    </span><span class="k">-</span><span class="w"> </span>Jako zanimljivih stvari
 

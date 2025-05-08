@@ -28,7 +28,7 @@
     <script src="../_static/translations.js?v=3c3b4542"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Индекс" href="../genindex.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../instalacija/index.html" />
+    <link rel="next" title="Python i virtualno okruženje" href="../instalacija/index.html" />
     <link rel="prev" title="&lt;no title&gt;" href="index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -49,9 +49,10 @@
   <section class="tex2jax_ignore mathjax_ignore" id="plct-dokumentacija">
 <h1>PLCT Dokumentacija<a class="headerlink" href="#plct-dokumentacija" title="Permalink to this heading">¶</a></h1>
 <p>PLCT ili <strong>Petlja Learning Content Tool</strong> je set alata koji ima za cilj da olakša kreiranje kurseva i lekcija na Petlja platformi. Ovaj projekat sadrži dokumentaciju koja će vam pomoći da se upoznate sa osnovnim funkcionalnostima PLCT-a i kako ga koristiti za izradu kurseva.</p>
-<section id="plct-cli">
-<h2>PLCT-CLI<a class="headerlink" href="#plct-cli" title="Permalink to this heading">¶</a></h2>
-<p><a class="reference external" href="https://github.com/Petlja/PLCT-CLI">PLCT-CLI</a> je alat komandne linije koji omogućava lakše korišćenje <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx-a</a>. Glavne funkcionalnosti uključuju:</p>
+<section id="sphinx-plct-cli">
+<h2>Sphinx &amp; PLCT-CLI<a class="headerlink" href="#sphinx-plct-cli" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> je alat napisan u python-u. Omogućava kreiranje dokumentacije zapisane u <strong>lightweight markup</strong> jeziku. Može genrisati HTML, PDF i druge formate.</p>
+<p><a class="reference external" href="https://github.com/Petlja/PLCT-CLI">PLCT-CLI</a> je alat komandne linije koji omogućava konfiguraciju i generisanje Sphinx projekata. Glavne funkcionalnosti koje PLCT-CLI nudi su:</p>
 <ul class="simple">
 <li><p><strong>Preview</strong>: Omogućava vam da pregledate kurs u lokalnom okruženju pre nego što bude objavljen na Petlji.</p></li>
 </ul>
@@ -71,7 +72,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Clean</strong>: Briše generisane datoteke i vraća projekat u prvobitno stanje.</p></li>
+<li><p><strong>Clean</strong>: Briše generisane fajlove.</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>plct<span class="w"> </span>clean
 </pre></div>
@@ -79,22 +80,23 @@
 </section>
 <section id="plct-sphinx-components">
 <h2>PLCT-Sphinx-Components<a class="headerlink" href="#plct-sphinx-components" title="Permalink to this heading">¶</a></h2>
-<p><a class="reference external" href="https://github.com/Petlja/PLCT-Sphinx-Components">PLCT-Sphinx-Components</a> je set veb komponenti za Sphinx (eng. Sphinx extensions) koji omogućava strukturirani pristup pravljenju sadržaja. Među najvažnijim komponentama su <strong>pitalice</strong> i <strong>notes</strong>.</p>
+<p><a class="reference external" href="https://github.com/Petlja/PLCT-Sphinx-Components">PLCT-Sphinx-Components</a> je set veb komponenti za Sphinx (eng. Sphinx extensions) koji omogućava strukturirani pristup pravljenju sadržaja. Komponente grubo mogu biti podeljene u sledeće grupe:</p>
+<ul class="simple">
+<li><p>pitalice</p></li>
+<li><p>koderske komponente</p></li>
+<li><p>napomene (eng. notes)</p></li>
+</ul>
+</section>
+<section id="izbor-markup-jezika">
+<h2>Izbor markup jezika<a class="headerlink" href="#izbor-markup-jezika" title="Permalink to this heading">¶</a></h2>
+<p>Kursevi se pišu u Markdown-u. Markdown je jednostavan markup jezik koji omogućava lako formatiranje teksta. Detaljnije informacije o sintaksi možete pronaći u <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Markdown dokumentaciji</a>.</p>
 
-    <div class="note-wrapper learnmorenote-type">
+    <div class="note-wrapper technicalnote-type">
         <div class="note-icon-holder"> </div>
-        <img src="../_static/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
+        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
         <div class="course-content">
             
-<p>Šta su <strong>Notes</strong></p>
-<p>Notes su važni delovi teksta koje želite posebno da istaknete. Grupisane su po tipu informacije koju sadrže:</p>
-<ul class="simple">
-<li><p>learnmore</p></li>
-<li><p>technical</p></li>
-<li><p>questionnote</p></li>
-<li><p>suggestionnote</p></li>
-<li><p>infonote</p></li>
-</ul>
+<p>Ako ste ranije radili sa Sphinx-om, znate da fajlovi obično imaju <code class="docutils literal notranslate"><span class="pre">.rst</span></code> ekstenziju, jer Sphinx koristi reStructuredText format. U našem iskustvu, Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) je poznatiji autorima, pa je rad sa njim jednostavniji. Zato koristimo Sphinx ekstenziju <code class="docutils literal notranslate"><span class="pre">myst_parser</span></code>, koja omogućava korišćenje Markdown fajlova u kursu.</p>
 
     </div></div>
 </section>

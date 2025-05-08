@@ -5,11 +5,11 @@ Kada govorimo o Petljinim kursevima, moramo imati na umu da nije svaki Sphinx pr
 
 Kursevi svoj sadržaj dele na **lekcije** i **aktivnosti**.
 
-Lekcije predstavljaju celine koje se bave jednom temom i sadrže više aktivnosti.
+`Lekcije` predstavljaju celine koje se bave jednom temom i sadrže više `aktivnosti`.
 
 ## Struktura kursa
 
-Fokusirajmo se na strukturu `source` foldera.
+Fokusirajmo se na strukturu `source` foldera na sledećem primeru.
 
 ```
 Kurs/
@@ -30,14 +30,13 @@ Kurs/
   
 ```
 
-## Glavni index.md fajl
+## Glavni `index.md` fajl
 
 Glavni `index.md` fajl je ulazna tačka u kurs. U njemu se nalaze osnovne informacije o kursu, kao i toctree koji definiše strukturu kursa.
 
 ### Table of contents
 
-Sphinx svoju strukturu gradi na osnovu `toctree` direktive. Index fajlovi služe kao veza između različitih lekcija i aktivnosti. Evo Evo kako može da izgleda jedan **toctree** u glavnom **index.md** fajlu:
-
+Sphinx svoju strukturu gradi na osnovu `toctree` direktive. Index fajlovi služe kao veza između različitih lekcija i aktivnosti. Evo kako izgleda ``toctree`` za strukturu opisanu iznad:
 
 ````markdown
 ```{toctree}
@@ -54,10 +53,11 @@ zanimljiva_tema/index
 Ovaj `toctree` komunicira da se, relativno u odnosu na njega, nalaze folderi `uvod`, `lekcija`, `prvi_koraci` i `zanimljiva_tema` koji sadrže index.md fajlove. 
 
 ```{infonote}
-Folder su zapravo konkretizacija lekcije a fajlovi konkretizacija aktivnosti.
+Folderi su zapravo konkretizacija lekcije a fajlovi konkretizacija aktivnosti. Lekcije svoj naziv dobijaju iz naslova `index.md` fajla.
+Aktivnosti svoj naziv dobijaju iz top level naslova fajla koji ih definiše.
 ```
 
-Ako odemo korak talje i posmatramo jedan `index.md` fajlu lekciji onda u njemu imamo `toctree` koji će opisati koje sve aktivnosti se nalaze u toj lekciji. Na primer file
+Ako odemo korak dalje i posmatramo jedan `index.md` fajl u lekciji onda u njemu imamo `toctree` koji će opisati koje sve aktivnosti se nalaze u toj lekciji. Na primer file
 `zanimljiva_tema/index.md` može izgledati ovako:
 
 ````markdown
@@ -71,19 +71,14 @@ kviz
 ```
 ````
 
-On komunicira da se u folderu `zanimljiva_tema` nalaze 3 fajla: `aktivnost.md`, `aktivnost2.md`, `kviz.md`. Sphinx će automatski generisati navigaciju između ovih fajlova.
-
-```{technicalnote}
-Ako ste ranije radili sa Sphinx-om, znate da fajlovi obično imaju `.rst` ekstenziju, jer Sphinx koristi reStructuredText format.  
-U našem iskustvu, Markdown (`.md`) je poznatiji autorima, pa je rad sa njim jednostavniji. Zato koristimo Sphinx ekstenziju `myst_parser`, koja omogućava korišćenje Markdown fajlova u kursu.
-```
+Ovaj `toctree` komunicira da se u folderu `zanimljiva_tema` nalaze 3 fajla: `aktivnost.md`, `aktivnost2.md`, `kviz.md` koji predstavljaju sadržaj lekcije. 
 
 
 ### Iskljucivanje aktivnosti iz kursa
 
-Za Sphinx index fajlovi mogu imati sadržaj kao i bilo koji drugi markdown fajl. Ovo nije slučaj na petlji. Kako bismo olakšali navigaciju kroz kurs i uskladili je sa Petljinim navigacionim sistemom, index.md fajlove možete isključiti dodavanjem sledećeg koda na samom vrhu:
+Za Sphinx index fajlovi mogu imati sadržaj kao i bilo koji drugi fajl. Ovo nije slučaj na Petlja platformi. Kako bismo olakšali navigaciju kroz kurs i uskladili je sa Petljinim navigacionim sistemom, `index.md` fajlove možete isključiti dodavanjem sledećeg koda (Markdown front matter) na sam vrh fajla:
 
-````markdown
+````text
 ---
 status: exclude
 ---
@@ -97,20 +92,20 @@ Ovu opciju možete koristiti u bilo kojoj aktivnosti, posebno za sadržaj koji j
 
 ### Meta podaci
 
-Po konvencija u glavni `index.md` upisujete meta podatke o kursu. Od ovih podataka ne zavise vas lokalni kurs ali su nama potrebni kako bi smo objavili kurs na petlji. Neke od ovih podataka kao sto je alias bice vec upisani u `index.md` fajl. Ostale podatke kao sto su opisi, šta ćete naučiti i šta vam je potrebno da bi ste pratili kurs prepustamo vama.
+Po konvencija u glavni `index.md` upisujete meta podatke o kursu. Neki od ovih podataka kao sto je **alias** bice vec upisani u `index.md` fajl. Ostale podatke kao sto su "opisi", "šta ćete naučiti" i "šta vam je potrebno" da bi ste pratili kurs prepustamo vama.
 
 
 ````markdown
 ---
 alias: alias_kursa
-short_descripiton: Kratak opis koji će se prikazivati naslovnoj strani kursa. (1)
-long_description: > (2)
+short_descripiton: Kratak opis koji će se prikazivati naslovnoj strani kursa.
+long_description: >
     <p> Opis kursa koji će se prikazivati na naslovnoj strani kursa. </p>
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
     <br>Овај курс Фондација Петља објавила je под лиценцом <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)</a>.
     </p>
-will_learn: (3)
+will_learn:
     - Lista stvari koje ćete naučiti tokom kursa.
     - Jako zanimljivih stvari
 

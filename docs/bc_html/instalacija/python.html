@@ -28,8 +28,8 @@
     <script src="../_static/translations.js?v=3c3b4542"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Индекс" href="../genindex.html" />
-    <link rel="next" title="Prvi koraci" href="../prvi_koraci/index.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="index.html" />
+    <link rel="next" title="Virtuelno okruženje" href="virtualno_okruzenje.html" />
+    <link rel="prev" title="Python i virtualno okruženje" href="index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -51,76 +51,14 @@
 <p>PLCT i Sphinx su napisani u Python-u, pa je potrebno da ga instalirate na vašem računaru.<br />
 Preuzmite Python 3.10 ili noviju verziju sa <a class="reference external" href="https://www.python.org/downloads/">zvanične stranice</a>.</p>
 <p>Dobra praksa je da dodate Python u PATH promenljivu okruženja. Ako koristite Windows, to možete uraditi tako što ćete prilikom instalacije čekirati opciju „Add Python to PATH”.</p>
-<section id="virtuelno-okruzenje">
-<h2>Virtuelno okruženje<a class="headerlink" href="#virtuelno-okruzenje" title="Permalink to this heading">¶</a></h2>
-<p>Naša preporuka je da za potrebe razvoja kurseva koristite virtuelno okruženje. Ovo će izolovati Python pakete koje koristite od drugih instaliranih na vašem računaru i generalno olakšati rad.</p>
-<p>Kako biste napravili virtuelno okruženje, otvorite terminal i pokrenite sledeće komande:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<p>Vašu versiju Python-a možete proveriti pomoću sledeće komande:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
 </pre></div>
 </div>
-<p>Ova komanda će napraviti folder <code class="docutils literal notranslate"><span class="pre">.venv</span></code> u trenutnom direktorijumu. Da biste aktivirali virtuelno okruženje, pokrenite sledeću komandu:</p>
-<p>Svaki put kada želite da koristite virtuelno okruženje, potrebno je da ga aktivirate. Da biste ga aktivirali, pokrenite sledeću komandu:</p>
-<p><strong>Za Windows:</strong></p>
-<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>.venv\Scripts\activate
+<p>očekivani izlaz je nešto poput:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.11.0
 </pre></div>
 </div>
-<p><strong>Za Linux/MacOS:</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</pre></div>
-</div>
-
-    <div class="note-wrapper learnmorenote-type">
-        <div class="note-icon-holder"> </div>
-        <img src="../_static/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
-        <div class="course-content">
-            
-<p>Naziv virtuelnog okruženja</p>
-<p>Obično se koristi naziv <code class="docutils literal notranslate"><span class="pre">.venv</span></code>, ali možete koristiti bilo koji naziv koji želite. Samo pazite na <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> fajl kako ne biste dodali folder u git repozitorijum.</p>
-
-    </div></div>
-</section>
-<section id="instalacija-potrebnih-paketa">
-<h2>Instalacija potrebnih paketa<a class="headerlink" href="#instalacija-potrebnih-paketa" title="Permalink to this heading">¶</a></h2>
-<p>Instalacija potrebnih paketa se vrši pomoću <code class="docutils literal notranslate"><span class="pre">pip</span></code> alata. Da biste instalirali potrebne pakete, pokrenite sledeću komandu:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-</section>
-<section id="azuriranje-virtuelnog-okruzenja">
-<h2>Ažuriranje virtuelnog okruženja<a class="headerlink" href="#azuriranje-virtuelnog-okruzenja" title="Permalink to this heading">¶</a></h2>
-<p>Ako pronađete neku Sphinx ekstenziju koja vam se dopada i želite da je koristite, potrebno je da pratite sledeće korake:</p>
-<section id="instalirajte-ekstenziju">
-<h3>1. Instalirajte ekstenziju<a class="headerlink" href="#instalirajte-ekstenziju" title="Permalink to this heading">¶</a></h3>
-<p>Ako želite da koristite <a class="reference external" href="https://sphinx-toolbox.readthedocs.io/en/stable/extensions/collapse.html">collapse</a> ekstenziju, potrebno je da je instalirate koristeći <code class="docutils literal notranslate"><span class="pre">pip</span></code> alat:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-toolbox
-</pre></div>
-</div>
-</section>
-<section id="dodajte-ekstenziju-u-conf-py-datoteku">
-<h3>2. Dodajte ekstenziju u <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> datoteku<a class="headerlink" href="#dodajte-ekstenziju-u-conf-py-datoteku" title="Permalink to this heading">¶</a></h3>
-<p>U <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> datoteci, u okviru <code class="docutils literal notranslate"><span class="pre">extensions</span></code> promenljive, dodajte naziv ekstenzije koju ste instalirali:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">...</span>
-    <span class="s2">&quot;sphinx_toolbox.collapse&quot;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-
-    <div class="note-wrapper technicalnote-type">
-        <div class="note-icon-holder"> </div>
-        <img src="../_static/technicalnote-img.svg" class="note-image technicalnote-image" /> 
-        <div class="course-content">
-            
-<p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code> je centralni konfiguracioni fajl za Sphinx. U njemu se nalaze sve potrebne informacije o projektu, kao i sve ekstenzije koje koristite. Lociran je u <code class="docutils literal notranslate"><span class="pre">source</span></code> folderu.</p>
-
-    </div></div>
-</section>
-<section id="dodajte-ekstenziju-u-requirements-txt-datoteku">
-<h3>3. Dodajte ekstenziju u <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> datoteku<a class="headerlink" href="#dodajte-ekstenziju-u-requirements-txt-datoteku" title="Permalink to this heading">¶</a></h3>
-<p>Poslednji korak je da novu ekstenziju dodate u <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> fajl. Ovo je važno jer će vam omogućiti da lako instalirate sve potrebne pakete kada prebacite projekat na drugi računar ili kada ga podelite sa drugim ljudima.</p>
-</section>
-</section>
 </section>
 
 

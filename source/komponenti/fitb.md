@@ -18,7 +18,7 @@ The GPT-3 model is developed by |blank|.
 The GPT-4o model is developed by |blank|. 
 ```
 
-Primer sa više praznina:
+Primer sa više tačnih odgovora:
 
 ````markdown
 ```{fitb}

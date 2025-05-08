@@ -8,7 +8,7 @@ Pre nego sto krenete sa izradom kursa, potrebno je pripremiti okruženje. U ovom
 
 ### Virutalno okruženje
 
-Zbog potencijalnih problema sa verzijama paketa ovog i drugih projekata, preporucuje se koriscenje virutalno okruzenja. Evo kako to uraditi:
+Zbog potencijalnih problema sa verzijama paketa, preporucuje se koriscenje virutalno okruzenja. Evo kako to uraditi:
 
 ```bash
 python -m venv .venv
@@ -18,7 +18,7 @@ Ova naredba ce napraviti folder pod imenom `.venv` u trenutnom direktorijumu.
 
 Ako koristite Windows, aktivirajte virtuelno okruženje pomoću sledeće komande:
 
-```bash
+```text
 .venv\Scripts\activate.bat
 ```
 Nakon aktiranja okruzenja vas comand prompt ce imati prefiks `(.venv)`:
@@ -27,9 +27,18 @@ Nakon aktiranja okruzenja vas comand prompt ce imati prefiks `(.venv)`:
 (.venv) ...
 ```
 
+## Instalacija PLCT-CLI
+
+PLCT-CLI možete instalirati pomoću sledeće komande:
+
+```bash
+pip install plct-cli
+```
+
+
 ### Instalacija potrebih paketa
 
-Python pakete koje su potrebne za izradu kursa se nalaze u `requirements.txt`. Da bi ih instalirali, pokrenite sledecu komandu:
+Svi Python paketi neophodni za izradu kursa nalaze se u fajlu `requirements.txt` u repozitorijumu kursa. Da biste ih instalirali, pokrenite sledeću komandu u terminalu:
 
 ```bash
 pip install -r requirements.txt
