@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Instalacija Python-a &#8212; PLCT Intro</title>
+    <title>SQLight komponenta (DB-Query) &#8212; PLCT Intro</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=213c783b" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -36,8 +36,7 @@
     <script src="../_static/translations.js?v=3c3b4542"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Индекс" href="../genindex.html" />
-    <link rel="next" title="Virtuelno okruženje" href="virtualno_okruzenje.html" />
-    <link rel="prev" title="Python i virtualno okruženje" href="index.html" />
+    <link rel="prev" title="Izvrsavanje python koda (PyCode)" href="py_code.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -54,20 +53,31 @@
 
           <div class="body" role="main">
             
-  <section class="tex2jax_ignore mathjax_ignore" id="instalacija-python-a">
-<h1>Instalacija Python-a<a class="headerlink" href="#instalacija-python-a" title="Permalink to this heading">¶</a></h1>
-<p>PLCT i Sphinx su napisani u Python-u, pa je potrebno da ga instalirate na vašem računaru.<br />
-Preuzmite Python 3.10 ili noviju verziju sa <a class="reference external" href="https://www.python.org/downloads/">zvanične stranice</a>.</p>
-<p>Dobra praksa je da dodate Python u PATH promenljivu okruženja. Ako koristite Windows, to možete uraditi tako što ćete prilikom instalacije čekirati opciju „Add Python to PATH”.</p>
-<p>Vašu versiju Python-a možete proveriti pomoću sledeće komande:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+  <section class="tex2jax_ignore mathjax_ignore" id="sqlight-komponenta-db-query">
+<h1>SQLight komponenta (DB-Query)<a class="headerlink" href="#sqlight-komponenta-db-query" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{db-query} 1
+:db-path: ../_static/it3_biblioteka.sql
+:name: it3_biblioteka
+:solution-query: SELECT * FROM knjige
+:show-expected-result:
+
+SELECT * FROM knjige
+
+```
 </pre></div>
 </div>
-<p>očekivani izlaz je nešto poput:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.11.0
-</pre></div>
-</div>
-</section>
+
+  <db-query id="1"  show-expected-result>
+    <file>../_static/it3_biblioteka.sql</file>
+    <name>it3_biblioteka</name>
+    <solution-query>SELECT * FROM knjige</solution-query>
+
+    
+    
+    <textarea>SELECT * FROM knjige</textarea>
+    
+  </db-query>
+    </section>
 
 
           </div>

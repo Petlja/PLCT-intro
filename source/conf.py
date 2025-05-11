@@ -11,7 +11,9 @@ extensions = [ "myst_parser",
                "plct_bulder_for_sphinx.builder.plct_builder",
                "plct_sphinx_components.extensions.notes",
                "plct_sphinx_components.extensions.multiple_choice",            
-               "plct_sphinx_components.extensions.fill_in_the_blank"
+               "plct_sphinx_components.extensions.fill_in_the_blank",
+               "plct_sphinx_components.extensions.py_code",
+               "plct_sphinx_components.extensions.database_queries",
                ]
 
 
