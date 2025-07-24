@@ -20,7 +20,7 @@ plct preview
 plct build
 ```
 
-- **Publish**: Generiše `docs` folder koji sadrži sve potrebne datoteke za objavljivanje kursa na GitHub Pages platformi. (neophodno je uradili  **plct build** pre publish-a)
+- **Publish**: Generiše `docs` folder koji sadrži sve potrebne datoteke za objavljivanje kursa na GitHub Pages platformi. (neophodno je uraditi  **plct build** pre publish-a)
 
 ```bash
 plct publish
