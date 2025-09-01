@@ -98,7 +98,7 @@ Po konvencija u glavni `index.md` upisujete meta podatke o kursu. Neki od ovih p
 ````markdown
 ---
 alias: alias_kursa
-short_descripiton: Kratak opis koji će se prikazivati naslovnoj strani kursa.
+short_description: Kratak opis koji će se prikazivati naslovnoj strani kursa.
 long_description: >
     <p> Opis kursa koji će se prikazivati na naslovnoj strani kursa. </p>
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
