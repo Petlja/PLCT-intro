@@ -8,4 +8,6 @@ status: exclude
 mc
 fitb
 notes
+py_code
+db
 ```
