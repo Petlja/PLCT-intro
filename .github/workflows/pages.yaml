@@ -21,13 +21,23 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job: docs/ is already built, so only fetch LFS files (images, video) and package it
+  # Build job: fetch LFS files (images, video), build the site with plct into docs/ and package it
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+      - name: Build with plct
+        run: |
+          plct build
+          plct publish
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
