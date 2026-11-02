@@ -8,4 +8,5 @@ status: exclude
 
 index_md
 preview
+slike_i_video
 ```

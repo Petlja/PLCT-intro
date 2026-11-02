@@ -2,6 +2,15 @@
 
 Ovaj repozitorijum za cilj ima da pojasni i olaksa prve korake u izradi kurseva koristeci [Sphinx](https://www.sphinx-doc.org/) uz pomoc [PLCT-CLI](https://github.com/Petlja/PLCT-CLI/tree/main)
 
+## Git LFS (video i slike)
+
+Ovaj repozitorijum koristi Git Large File Storage (LFS) za video i slike (`*.mp4`, `*.png`, `*.jpg`).
+Pre prvog `git pull` / `git push` sa ovim fajlovima, pokrenite:
+
+```bash
+git lfs install
+```
+
 ##  Fast Start 
 
 Pre nego sto krenete sa izradom kursa, potrebno je pripremiti okruženje. U ovom delu ćemo proći kroz osnovne korake kako da to uradite.
@@ -53,4 +62,3 @@ plct preview
 ```
 
 Vase lekcije se prevode u HTML format, a zatim ce se kurs prikazati u vašem podrazumevanom web pretraživaču.
-
