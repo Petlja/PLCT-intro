@@ -5,14 +5,14 @@
 Za slike preporučujemo MyST `figure` direktivu, jer omogućava širinu, alt tekst i stilizaciju:
 
 ````markdown
-```{figure} img/sample-image.jpg
+```{figure} ./img/sample-image.jpg
 :width: 600px
 :class: with-border
 :alt: Opis slike
 ```
 ````
 
-```{figure} img/sample-image.jpg
+```{figure} ./img/sample-image.jpg
 :width: 600px
 :class: with-border
 :alt: Opis slike
